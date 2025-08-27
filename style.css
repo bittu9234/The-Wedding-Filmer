@@ -218,7 +218,7 @@ html {
 }
 .details h2{
   color: #F9F9F9;
-    text-transform: uppercase;
+  text-transform: uppercase;
   font-family: "Roslindale Condensed Testing, sans-serif";
   float: left;
   padding-left: 20px;
@@ -353,6 +353,7 @@ html {
   color: black;
   font-size: 12px;
   margin-top: 30px;
+  margin-left: 20px;
 }
 
 .bott img {
