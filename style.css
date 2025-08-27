@@ -1,0 +1,432 @@
+body {
+  background-color: black !important;
+}
+html {
+  margin: 0;
+  /* height: 100%; */
+  background: black;
+}
+
+/* Sidebar */
+.sidebar {
+  background: black;
+  color: #fff;
+  height: 100vh; /* fixed full height */
+  padding: 20px;
+  position: fixed; /* sidebar fix */
+  top: 0;
+  left: 0;
+  width: 10%; /* sidebar width */
+  overflow-y: auto; /* scroll */
+  width: 12%;
+}
+
+.sidebar a {
+  color: #fefbfb;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+.main {
+  background-color: black;
+}
+.sidebar a:hover {
+  border-radius: 10px;
+  background: #495057;
+}
+#logo {
+  /* background: red; */
+}
+#logo img {
+  width: 100%;
+  margin: 0px !important;
+  transform: translate(-50px 0px) !important;
+}
+#logo a:hover {
+  background: none !important;
+}
+/* Content */
+.content {
+  margin-top: 1.9% !important;
+  padding-right: 1px !important;
+  background: #f7f9fa;
+  border-radius: 20px;
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+.inp {
+  width: 200px;
+}
+.faq {
+  background: black;
+  color: white;
+  border-radius: 30%;
+  width: auto;
+}
+.enquire {
+  background: red;
+  color: white;
+}
+.d-block {
+  border-radius: 20px;
+  margin: 0px;
+  /* height: 80% ; */
+  padding: 0px;
+}
+.text1 h6 {
+  margin-top: 150px;
+  margin-bottom: 120px;
+
+  font-family: "Intel One Mono", monospace;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>;
+  font-style: normal; */
+}
+.text2 h2 {
+  /* margin-bottom: 50px;
+  font-size: 26px;
+  font-family: Roslindale Condensed Testing, sans-serif;
+  color: #e50e0e;
+  letter-spacing: 4px;
+  font-family: Roslindale Condensed Testing, sans-serif;
+  font-size: 34px;
+  font-weight: 300; */
+}
+.text2 h2 {
+  font-family: "Roslindale Condensed Testing, sans-serif";
+}
+
+.slide2 {
+  float: left;
+}
+.slide2 img {
+  overflow-x: auto;
+  border-radius: 20px;
+  padding-right: 10px;
+}
+/* Menu Scroll Styling */
+.menu-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 10px 0;
+  justify-content: flex-start; /*default mobile view*/
+}
+
+.menu-btn {
+  flex: 0 0 auto;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 20px;
+  background: #eee;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: 0s;
+  border: 1px solid gray;
+  font-size: 10px;
+}
+.menu-btn:hover {
+  border: solid 1px rgb(47, 48, 47);
+}
+.menu-btn.active {
+  background: #e50e0e;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .menu-scroll {
+    justify-content: center; /* center me align karne ke liye */
+  }
+}
+/* Slider Sections */
+.slider-section {
+  display: none;
+  margin-top: 20px;
+}
+.slider-section.active {
+  display: block;
+}
+
+.slider-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Image sizing to show partial next image */
+.slider-container img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* flex-nowrap ke sath row ke cols horizontally scroll karenge */
+.row.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+.btns {
+  background: black;
+}
+.love img {
+  width: 100%;
+}
+.text3 {
+  /* margin-top: 500px; */
+  margin-top: 100px;
+  font-family: "Roslindale Testing, sans-serif" !important;
+  text-transform: uppercase;
+}
+.text4 {
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-family: "Roslindale Condensed Testing, sans-serif";
+}
+.imgdiv1 {
+  position: relative;
+}
+.imgdiv1 img{
+  border-radius: 20px;
+}
+.details {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to top, black, transparent);
+  padding: 20px 0;
+  border-radius: 20px;
+
+}
+.details H3 {
+  color: #F9F9F9;
+    text-transform: uppercase;
+  font-family: "Roslindale Condensed Testing, sans-serif";
+  float: left;
+  padding-left: 20px;
+  opacity: 0.9;
+  font-size: 20px;
+}
+.details h2{
+  color: #F9F9F9;
+    text-transform: uppercase;
+  font-family: "Roslindale Condensed Testing, sans-serif";
+  float: left;
+  padding-left: 20px;
+  opacity: 0.9;
+  font-size: 25px;
+}
+.text3 h6{
+  margin-top: 100px;
+}
+.imgdiv img {
+  width: 100%;
+  border-radius: 10px;
+}
+.text5 h3 {
+  width: 100%;
+  font-family: " Parisienne, sans-serif";
+  font-weight: 400;
+  display: block;
+}
+.text {
+  font-family: "Roslindale Condensed Testing, sans-serif";
+  text-transform: uppercase;
+}
+.text p {
+  font-family: "Aspekta 350", Arial, sans-serif !important;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.68;
+  text-align: left;
+  width: 80%;
+  height: auto;
+  margin-top: 40px;
+}
+.imgdiv2_section{
+  margin-top: 20px !important;
+}
+.imgdiv2 img{
+  width: 100%;
+
+}
+.imgdiv2 h6 {
+  padding-top: 15px;
+
+  font-size: 13px !important;
+  color: #000000;
+}
+.imgdiv2 p {
+  padding-top: 5px;
+  font-family: "Aspekta 350, Arial, sans-serif " !important;
+
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.68;
+  text-align: left;
+  width: 100%;
+  height: auto;
+}
+.roundimg_div{
+  overflow: hidden;
+}
+.roundimg_div img{
+  width: 100%;
+  transition:transform 4s ;
+
+}
+.roundimg_div img:hover{
+  transform:rotate(10deg) scale(1.2,1.2);
+}
+.text5 h2{
+  width: 100%;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+}
+.text5 h3{
+  margin-bottom: 200px;
+}
+.youtube {
+  background-color: #e8e6e3;
+  border-radius: 20px;
+}
+.youtube img {
+  border-radius: 30px;
+  padding: 10px 0px;
+}
+.youtube2 {
+  padding: 20px;
+}
+.text6 h4{
+  text-transform: uppercase;
+  color: red;
+
+}
+.text6 h2{
+  text-transform: uppercase;
+}
+.text7 h6{
+  margin-top: 100px;
+  text-transform: uppercase;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+
+}
+.text8 h1{
+  text-transform:uppercase;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+  margin-bottom: 100px;
+}
+.text9 h6{
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+
+}
+.text10 h2{
+  text-transform: uppercase;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+
+}
+.text11 h6{
+  margin-top: 70px;
+  text-transform: uppercase;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+
+
+}
+.text12 h2{
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family:" Cambria, Cochin, Georgia, Times, Times New Roman, serif";
+
+}
+.text13 p{
+  color: black;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.bott img {
+  margin-bottom: 200px !important;
+}
+.oo {
+  margin-bottom: 200px !important;
+}
+.fix {
+  padding-top: 50px;
+}
+.fix h6 {
+  color: #a39c8f;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #000;
+  text-align: left;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-left: 30px;
+  font-family: "Roslindale Testing, sans-serif";
+
+  font-weight: 400;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+.fix h2 {
+  color: black;
+  text-transform: uppercase;
+  display: block;
+  font-size: 20px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-family: "Roslindale Condensed Testing, sans-serif";
+
+  text-rendering: optimizeLegibility;
+}
+.fix p {
+  padding-top: 20px;
+  font-family: "Aspekta 350", Arial, sans-serif !important;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.68;
+  text-align: left;
+  width: 80%;
+  height: auto;
+  padding-left: 30px;
+}
+
+.imgdiv2 {
+}
+.imgdiv2 img {
+  width: 100%;
+
+  border-radius: 20px;
+}
+.mar {
+  margin-bottom: 0px !important;
+  /* background-color: red; */
+}
+.mar2 {
+  margin-top: 20px;
+}
+.videoarea{
+  margin: 20px !important;
+}
+.videoarea video {
+  border-radius: 20px;
+  width: 100%;
+}
