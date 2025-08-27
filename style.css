@@ -299,9 +299,15 @@ html {
   background-color: #e8e6e3;
   border-radius: 20px;
 }
-.youtube img {
+/* .youtube img {
   border-radius: 30px;
   padding: 10px 0px;
+} */
+.youtube iframe{
+  border-radius: 25px !important;
+  width: 100%;
+  padding: 10px 10px 7px 0px;
+  /* padding: 10px; */
 }
 .youtube2 {
   padding: 20px;
@@ -429,5 +435,5 @@ html {
 }
 .videoarea video {
   border-radius: 20px;
-  width: 100%;
+  width: 104%;
 }
