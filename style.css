@@ -38,9 +38,9 @@ html {
   /* background: red; */
 }
 #logo img {
-  width: 100%;
+  width: 50%;
   margin: 0px !important;
-  transform: translate(-50px 0px) !important;
+  transform: translate(-20px 0px) !important;
 }
 #logo a:hover {
   background: none !important;
