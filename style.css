@@ -2,43 +2,63 @@ body {
   background-color: black !important;
 }
 html {
-  margin: 0;
+  margin: 0,auto;
   /* height: 100%; */
   background: black;
 }
+.hel{
+  margin-top: 10px !important;
+  margin-bottom: 20px;
+}
 .hel input{
-  background-color: black;
+  background-color: #E1E1E1;
+  border:solid 1px #b5b5b5;
   width: 80%;
   /* float: inline-end; */
   float: left;
-  border-radius: 5px ;
+  border-radius: 50px ;
   margin: 5px 10px;
+  height: 40px;
 }
+/* .hel input:active{
+  background-color: RED;
+} */
 .flow{
-  background-color: red;
+  background-color: black;
   color: white;
-  height: 30px;
+  height: 40px;
   float: left;
   /* margin-top: 5px; */
   margin-bottom: 2px;
   margin: 5px 10px;
-  border-radius: 5px;
+  border-radius: 50px ;
   
 
 }
 .flow a{
   text-decoration: none;
+  color: white;
 }
 .flow:hover{
-  background-color: #fff;
+  background-color: #1b0303;
 }
 .flow p{
 
   font-size: 15px;
-  padding: 0 10px;
+  
+  padding: 5px 20px;
+  /* padding: 0 10px; */
   /* padding: 5px; */
   text-transform: capitalize;
   
+}
+.flow2{
+  /* align-items: center; */
+  margin: 20px 50%;
+  margin: 0 ,auto;
+}
+.flow3{
+  background-color: white !important;
 }
 /* Sidebar */
 .sidebar {
