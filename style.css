@@ -54,7 +54,10 @@ html {
   margin: 0, auto;
 }
 .flow3 {
-  background-color: white !important;
+  background-color: black !important;
+  /* margin: 0 , 50% !important; */
+  /* padding: 0 , 50% !important; */
+  margin-left: 50%;
 }
 .text-box {
   position: relative;
@@ -62,8 +65,7 @@ html {
   height: 40px;
   overflow: hidden;
   cursor: pointer;
-  /* font-size: 30px; */
-  /* font-weight: bold; */
+
   text-align: center;
   line-height: 40px;
   background: #9c1616;
@@ -78,14 +80,14 @@ html {
 }
 
 .text1 {
-  top: 0; /* ऊपर वाला टेक्स्ट */
+  top: 0; /* top text*/
 }
 
 .text2 {
-  top: 100%; /* नीचे वाला टेक्स्ट */
+  top: 100%; /* bottom */
 }
 
-/* Hover पर swap */
+/* Hover 0n swap */
 .text-box:hover .text1 {
   top: -100%;
 }
@@ -93,7 +95,10 @@ html {
 .text-box:hover .text2 {
   top: 0;
 }
-
+/* .flow .button{
+  background-color: red ;
+  padding: 10px;
+} */
 /* Sidebar */
 .sidebar {
   background: black;
@@ -658,12 +663,12 @@ html {
 
 
 .new-section {
-  background: white;
+  background: rgb(54, 9, 9);
   color: black;
   padding: 40px 0;
 }
 
-/* 🔹 Row 1 swap effect */
+/*  Row 1 swap effect */
 .swap-box {
   position: relative;
   display: inline-block;
@@ -699,58 +704,11 @@ html {
   top: 0;
 }
 
-/* 🔹 Scroll Section */
-.scroll-container {
-  overflow-x: auto;      
-  white-space: nowrap;
-  -ms-overflow-style: none;  
-  scrollbar-width: none;     
-}
-.scroll-container::-webkit-scrollbar {
-  display: none;  
-}
 
-/* Thumbnail container */
-.video-thumbnail {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-.video-thumbnail img {
-  display: block;
-  max-height: 200px;
-  border-radius: 10px;
-}
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: black;
-  border-radius: 50%;
-}
-.play-button::before {
-  content: '';
-  display: block;
-  margin-left: 5px;
-  width: 0;
-  height: 0;
-  border-left: 15px solid white;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-}
 
-/* Caption */
-.caption {
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  transition: color 1s ease;
-}
-.col-auto:hover .caption {
-  color: red;
+
+
+
+.sc{
+  background-color: red;
 }
