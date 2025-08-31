@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Text Swap</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+
+    .btn-slide {
+      position: relative;
+      display: inline-block;
+      width: 150px;
+      height: 50px;
+      overflow: hidden;
+      background: black;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .btn-slide span {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      left: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .btn-slide .text1 {
+      top: 50%;
+      transform: translateY(-50%); /* Center by default */
+    }
+
+    .btn-slide .text2 {
+      top: 150%;  /* Hidden below */
+    }
+
+    /* Hover effect */
+    .btn-slide:hover .text1 {
+      transform: translateY(-150%); /* Slide up */
+    }
+
+    .btn-slide:hover .text2 {
+      top: 50%;
+      transform: translateY(-50%); /* Slide into center */
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn-slide">
+    <span class="text1">t1: Hello</span>
+    <span class="text2">t2: Hello</span>
+  </button>
+
+</body>
+</html>
