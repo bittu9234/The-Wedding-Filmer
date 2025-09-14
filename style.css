@@ -20,80 +20,77 @@ html {
   margin: 5px 10px;
   height: 40px;
 }
-/* .hel input:active{
-  background-color: RED;
-} */
 .flow {
   background-color: black;
   color: white;
-  height: 40px;
+  /* height: 40px; */
   float: left;
-  /* margin-top: 5px; */
   margin-bottom: 2px;
   margin: 5px 10px;
   border-radius: 50px;
 }
-.flow a {
-  text-decoration: none;
-  color: white;
-}
-.flow:hover {
-  background-color: #1b0303;
-}
+
 .flow p {
   font-size: 15px;
 
   padding: 5px 20px;
-  /* padding: 0 10px; */
-  /* padding: 5px; */
+
   text-transform: capitalize;
 }
 .flow2 {
-  /* align-items: center; */
   margin: 20px 50%;
   margin: 0, auto;
 }
 .flow3 {
   background-color: black !important;
-  /* margin: 0 , 50% !important; */
-  /* padding: 0 , 50% !important; */
+
   margin-left: 50%;
 }
-.text-box {
+
+.buShow{
+  background-color:black !important;
+  color : white;
+  margin: 0px;
+  padding: 20px 50px;
+  border-radius: 30px;
+  border: none;
+  text-align: center;
   position: relative;
-  width: 100px;
-  height: 40px;
   overflow: hidden;
   cursor: pointer;
 
-  text-align: center;
-  line-height: 40px;
-  background: #9c1616;
-  border-radius: 50px;
 }
-
-.text-box span {
+.flow:hover .buShow{
+  
+}
+.buShow span {
+  margin-top: 6px;
+  background-color: black !important;
   position: absolute;
   width: 100%;
   left: 0;
   transition: all 0.4s ease;
 }
-
 .text1 {
   top: 0; /* top text*/
+  
 }
 
 .text2 {
   top: 100%; /* bottom */
 }
 
-/* Hover 0n swap */
-.text-box:hover .text1 {
+.buShow:hover .text1 {
   top: -100%;
 }
 
-.text-box:hover .text2 {
+.buShow:hover .text2 {
   top: 0;
+}
+
+.buShow:hover{
+  background-color: red;
+  
 }
 /* .flow .button{
   background-color: red ;
@@ -181,14 +178,7 @@ html {
   font-style: normal; */
 }
 .text2 h2 {
-  /* margin-bottom: 50px;
-  font-size: 26px;
-  font-family: Roslindale Condensed Testing, sans-serif;
-  color: #e50e0e;
-  letter-spacing: 4px;
-  font-family: Roslindale Condensed Testing, sans-serif;
-  font-size: 34px;
-  font-weight: 300; */
+
 }
 .text2 h2 {
   font-family: "Roslindale Condensed Testing, sans-serif";
