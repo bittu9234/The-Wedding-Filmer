@@ -41,11 +41,7 @@ html {
   margin: 20px 50%;
   margin: 0, auto;
 }
-.flow3 {
-  background-color: black !important;
 
-  margin-left: 50%;
-}
 
 .buShow{
   background-color:black !important;
@@ -60,9 +56,7 @@ html {
   cursor: pointer;
 
 }
-.flow:hover .buShow{
-  
-}
+
 .buShow span {
   margin-top: 6px;
   background-color: black !important;
@@ -92,11 +86,7 @@ html {
   background-color: red;
   
 }
-/* .flow .button{
-  background-color: red ;
-  padding: 10px;
-} */
-/* Sidebar */
+
 .sidebar {
   background: black;
   color: #fff;
@@ -310,19 +300,10 @@ html {
   }
   
 }
-     /* END SLIDE IMG */
+.centerbutn{
+  margin-left:50% ;
+}
 
-/* Image sizing to show partial next image */
-/* .slider-container img {
-  object-fit: cover;
-  border-radius: 10px;
-} */
-
-
-/* flex-nowrap ke sath row ke cols horizontally scroll karenge */
-/* .row.flex-nowrap {
-  flex-wrap: nowrap !important;
-} */
 .btns {
   background: black;
 }
@@ -646,7 +627,6 @@ html {
   transition: color 1s ease;
 }
 
-/* 👇 अब पूरा col hover hone par text ka color badlega */
 .col-auto:hover .caption {
   color: red;
 }
@@ -722,10 +702,7 @@ html {
   float:right;
   overflow: hidden;
   border-radius: 50px;
-  /* padding: 5px 20px; */
-
   padding: 0px;
-  /* height: 40px; */
   position: relative;
 }
 .ab1 button p{

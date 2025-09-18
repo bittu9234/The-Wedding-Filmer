@@ -24,3 +24,5 @@ menuBtns.forEach(btn => {
 document.querySelector('.view-more-btn').addEventListener('click', function() {
   alert('View More button clicked!');
 });
+
+
