@@ -177,6 +177,17 @@ html {
   /* font-weight: <weight>;
   font-style: normal; */
 }
+/* @media (width:768) {
+  .content{
+    order: 1;
+  }
+  .sidebar{
+    order: 2;
+    width: 20px;
+    z-index: 1000;
+  }
+  
+} */
 .text2 h2 {
 
 }
@@ -245,16 +256,73 @@ html {
   display: none;
 }
 
-/* Image sizing to show partial next image */
-.slider-container img {
-  object-fit: cover;
-  border-radius: 10px;
+.scroll-row::-webkit-scrollbar {
+  display: none;
 }
 
-/* flex-nowrap ke sath row ke cols horizontally scroll karenge */
-.row.flex-nowrap {
-  flex-wrap: nowrap !important;
+.scroll-row a{
+  text-decoration: none;
 }
+
+.imgdiv{
+  position: relative;
+  text-align: center;
+  text-decoration: none; /* remove underline */
+  color: black;
+
+}
+.imgdiv img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px !important;
+  display: block;
+}
+.details {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to top, black, transparent);
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.details H3 {
+  color: #f9f9f9;
+  text-transform: uppercase;
+  font-family: "Roslindale Condensed Testing, sans-serif";
+  float: left;
+  text-align: left;
+  padding-left: 10px;
+  opacity: 0.9;
+  font-size: 25px;
+}
+@media (max-width:480px) {
+  .details{
+    padding-bottom: 1px !important;
+    /* padding: 50px,0 !important; */
+  }
+  
+}
+@media (max-width:480px) {
+  .details h3,.details h2{
+    font-size : 16px;
+  }
+  
+}
+     /* END SLIDE IMG */
+
+/* Image sizing to show partial next image */
+/* .slider-container img {
+  object-fit: cover;
+  border-radius: 10px;
+} */
+
+
+/* flex-nowrap ke sath row ke cols horizontally scroll karenge */
+/* .row.flex-nowrap {
+  flex-wrap: nowrap !important;
+} */
 .btns {
   background: black;
 }
@@ -276,36 +344,9 @@ html {
   position: relative;
 }
 .imgdiv1 img {
-  border-radius: 20px;
+  border-radius: 20px !important;
 }
-.details {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  color: white;
-  background: linear-gradient(to top, black, transparent);
-  padding: 20px 0;
-  border-radius: 20px;
-}
-.details H3 {
-  color: #f9f9f9;
-  text-transform: uppercase;
-  font-family: "Roslindale Condensed Testing, sans-serif";
-  float: left;
-  padding-left: 20px;
-  opacity: 0.9;
-  font-size: 20px;
-}
-.details h2 {
-  color: #f9f9f9;
-  text-transform: uppercase;
-  font-family: "Roslindale Condensed Testing, sans-serif";
-  float: left;
-  padding-left: 20px;
-  opacity: 0.9;
-  font-size: 25px;
-}
+
 .text3 h6 {
   margin-top: 100px;
 }
@@ -334,26 +375,22 @@ html {
   height: auto;
   margin-top: 40px;
 }
-.imgdiv2_section {
-  margin-top: 20px !important;
-}
-.imgdiv2 img {
-  width: 100%;
-}
-.imgdiv2 h6 {
-  padding-top: 15px;
 
+.data h6,.imgdiv2 h6 {
+  padding-top: 15px;
+  text-align: center;
   font-size: 13px !important;
   color: #000000;
 }
-.imgdiv2 p {
+
+.data p,.imgdiv2 p {
   padding-top: 5px;
   font-family: "Aspekta 350, Arial, sans-serif " !important;
 
   font-size: 12px;
   font-weight: 400;
   opacity: 0.68;
-  text-align: left;
+  /* text-align: left; */
   width: 100%;
   height: auto;
 }
@@ -440,10 +477,10 @@ html {
 .oo {
   margin-bottom: 200px !important;
 }
-.fix {
+.fix , .data2 {
   padding-top: 50px;
 }
-.fix h6 {
+.fix h6,.data2 h6 {
   color: #a39c8f;
   margin-top: 10px;
   font-size: 15px;
@@ -464,7 +501,7 @@ html {
 
   text-rendering: optimizeLegibility;
 }
-.fix h2 {
+.fix h2,.data2 h2 {
   color: black;
   text-transform: uppercase;
   display: block;
@@ -475,7 +512,7 @@ html {
 
   text-rendering: optimizeLegibility;
 }
-.fix p {
+.fix p , .data2 p{
   padding-top: 20px;
   font-family: "Aspekta 350", Arial, sans-serif !important;
   letter-spacing: 1px;
@@ -741,12 +778,10 @@ html {
 .scroll-row::-webkit-scrollbar {
   display: none;
 }
-.scroll-row {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+
 
 /* Image container */
+
 .img-card {
   position: relative;
   text-align: center;
@@ -794,3 +829,4 @@ html {
 .img-card:hover .img-text {
   color: red;
 }
+
