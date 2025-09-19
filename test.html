@@ -1,67 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button Text Swap</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f5f5f5;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Multi-Row Scroll</title>
+<style>
+  /* Body styling */
+  body {
+    margin: 0;
+    height: 500vh; /* Tall page for multiple rows */
+    background: #111;
+    /* font-family: sans-serif; */
+  }
 
-    .btn-slide {
-      position: relative;
-      display: inline-block;
-      width: 150px;
-      height: 50px;
-      overflow: hidden;
-      background: black;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-    }
+  /* Common scroll container */
+  .custom-scroll-wrapper {
+    position: relative;
+    width: 90%;
+    height: 300px;
+    margin: 50px auto;
+    overflow: hidden;
+    border: 2px solid #fff;
+    border-radius: 10px;
+  }
 
-    .btn-slide span {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      left: 0;
-      transition: transform 0.5s ease;
-    }
+  /* Scroll row for horizontal movement */
+  .custom-scroll-row {
+    display: flex;
+    width: 300%; /* Long width for horizontal scroll */
+    transition: transform 0.1s linear;
+  }
 
-    .btn-slide .text1 {
-      top: 50%;
-      transform: translateY(-50%); /* Center by default */
-    }
+  .custom-scroll-row img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+  }
 
-    .btn-slide .text2 {
-      top: 150%;  /* Hidden below */
-    }
-
-    /* Hover effect */
-    .btn-slide:hover .text1 {
-      transform: translateY(-150%); /* Slide up */
-    }
-
-    .btn-slide:hover .text2 {
-      top: 50%;
-      transform: translateY(-50%); /* Slide into center */
-    }
-  </style>
+  /* Fade in when in viewport */
+  .custom-scroll-row img.custom-visible {
+    opacity: 1;
+  }
+</style>
 </head>
 <body>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<!-- Row 1 -->
+<div class="custom-scroll-wrapper">
+  <div class="custom-scroll-row">
+    <img src="img/s2_2.jpg" alt="">
+    <img src="img/s2_1.png" alt="">
+    <img src="img/s2_1.png" alt="">
+    <img src="img/s2_2.jpg" alt="">
+    <img src="img/s2_2.jpg" alt="">
+    <img src="img/s2_2.jpg" alt="">
+    <img src="img/s2_2.jpg" alt="">
+  </div>
+</div>
 
-  <button class="btn-slide">
-    <span class="text1">t1: Hello</span>
-    <span class="text2">t2: Hello</span>
-  </button>
+
+
+
+<script>
+const scrollRows = document.querySelectorAll('.custom-scroll-row');
+
+window.addEventListener('scroll', () => {
+  scrollRows.forEach((row) => {
+    const wrapper = row.parentElement;
+    const rect = wrapper.getBoundingClientRect();
+
+    // Check if wrapper is visible in viewport
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      // Calculate scroll percentage only for visible part
+      const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+      const scrollPercent = 1 - (rect.bottom / (window.innerHeight + wrapper.offsetHeight));
+
+      // Horizontal translate calculation
+      const maxTranslate = row.scrollWidth - wrapper.offsetWidth;
+      row.style.transform = `translateX(-${maxTranslate * scrollPercent}px)`;
+
+      // Fade in effect for images
+      const images = row.querySelectorAll('img');
+      images.forEach(img => {
+        const imgRect = img.getBoundingClientRect();
+        if(imgRect.left < window.innerWidth && imgRect.right > 0){
+          img.classList.add('custom-visible');
+        } else {
+          img.classList.remove('custom-visible');
+        }
+      });
+    }
+  });
+});
+
+</script>
 
 </body>
 </html>
