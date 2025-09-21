@@ -3,106 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Custom Multi-Row Scroll</title>
+<title>Typing Section Scroll Reveal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-  /* Body styling */
   body {
     margin: 0;
-    height: 500vh; /* Tall page for multiple rows */
-    background: #111;
-    /* font-family: sans-serif; */
+    font-family: Arial, sans-serif;
+    min-height: 300vh;
   }
 
-  /* Common scroll container */
-  .custom-scroll-wrapper {
-    position: relative;
-    width: 90%;
-    height: 300px;
-    margin: 50px auto;
+  .typing-section {
+    height: 7vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
     overflow: hidden;
-    border: 2px solid #fff;
-    border-radius: 10px;
+  }
+  .typing-section p{
+    color: red;
+    align-items: center;
   }
 
-  /* Scroll row for horizontal movement */
-  .custom-scroll-row {
-    display: flex;
-    width: 300%; /* Long width for horizontal scroll */
-    transition: transform 0.1s linear;
+  .scroll-text {
+    align-items: center;
+    display: inline-block;
+
   }
 
-  .custom-scroll-row img {
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.8;
-    transition: opacity 0.5s;
+  @media (max-width: 768px) {
+    .scroll-text { font-size: 1.5rem; }
   }
 
-  /* Fade in when in viewport */
-  .custom-scroll-row img.custom-visible {
-    opacity: 1;
+  @media (min-width: 1200px) {
+    .scroll-text { font-size: 2.5rem; }
   }
 </style>
 </head>
 <body>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<!-- Row 1 -->
-<div class="custom-scroll-wrapper">
-  <div class="custom-scroll-row">
-    <img src="img/s2_2.jpg" alt="">
-    <img src="img/s2_1.png" alt="">
-    <img src="img/s2_1.png" alt="">
-    <img src="img/s2_2.jpg" alt="">
-    <img src="img/s2_2.jpg" alt="">
-    <img src="img/s2_2.jpg" alt="">
-    <img src="img/s2_2.jpg" alt="">
+ 
+
+
+<section class="typing-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <p class="scroll-text ">This is another scroll text</p>
+      </div>
+    </div>
   </div>
-</div>
-
-
-
+</section>
 
 <script>
-const scrollRows = document.querySelectorAll('.custom-scroll-row');
+const typingSections = document.querySelectorAll('.typing-section');
 
-window.addEventListener('scroll', () => {
-  scrollRows.forEach((row) => {
-    const wrapper = row.parentElement;
-    const rect = wrapper.getBoundingClientRect();
+function updateText() {
+  const windowHeight = window.innerHeight;
 
-    // Check if wrapper is visible in viewport
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      // Calculate scroll percentage only for visible part
-      const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-      const scrollPercent = 1 - (rect.bottom / (window.innerHeight + wrapper.offsetHeight));
+  typingSections.forEach(section => {
+    const textElement = section.querySelector('.scroll-text');
+    const fullText = textElement.getAttribute('data-fulltext') || textElement.innerText;
 
-      // Horizontal translate calculation
-      const maxTranslate = row.scrollWidth - wrapper.offsetWidth;
-      row.style.transform = `translateX(-${maxTranslate * scrollPercent}px)`;
-
-      // Fade in effect for images
-      const images = row.querySelectorAll('img');
-      images.forEach(img => {
-        const imgRect = img.getBoundingClientRect();
-        if(imgRect.left < window.innerWidth && imgRect.right > 0){
-          img.classList.add('custom-visible');
-        } else {
-          img.classList.remove('custom-visible');
-        }
-      });
+    if (!textElement.getAttribute('data-fulltext')) {
+      textElement.setAttribute('data-fulltext', fullText);
+      textElement.innerText = "";
     }
-  });
-});
 
+    const rect = section.getBoundingClientRect();
+    let progress = 1 - rect.top / windowHeight; // robust formula
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    const charsToShow = Math.floor(fullText.length * progress);
+    textElement.innerText = fullText.substring(0, charsToShow);
+  });
+}
+
+// initial update
+updateText();
+
+// update on scroll and resize
+window.addEventListener('scroll', updateText);
+window.addEventListener('resize', updateText);
 </script>
 
 </body>

@@ -28,3 +28,59 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// love Image
+const path = document.querySelector("path");
+const pathLength = path.getTotalLength();
+path.style.strokeDasharray = pathLength;
+path.style.strokeDashoffset = pathLength;
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const section = document.getElementById("heart-section");
+  const rect = section.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    const scrollDir = window.scrollY > lastScroll ? 'down' : 'up';
+
+    if (scrollDir === 'down') {
+      path.style.strokeDashoffset = 0;
+    } else {
+      path.style.strokeDashoffset = pathLength;
+    }
+  }
+
+  lastScroll = window.scrollY;
+});
+
+
+const typingSections = document.querySelectorAll('.typing-section');
+
+function updateText() {
+  const windowHeight = window.innerHeight;
+
+  typingSections.forEach(section => {
+    const textElement = section.querySelector('.scroll-text');
+    const fullText = textElement.getAttribute('data-fulltext') || textElement.innerText;
+
+    if (!textElement.getAttribute('data-fulltext')) {
+      textElement.setAttribute('data-fulltext', fullText);
+      textElement.innerText = "";
+    }
+
+    const rect = section.getBoundingClientRect();
+    let progress = 1 - rect.top / windowHeight; // robust formula
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    const charsToShow = Math.floor(fullText.length * progress);
+    textElement.innerText = fullText.substring(0, charsToShow);
+  });
+}
+
+// initial update
+updateText();
+
+// update on scroll and resize
+window.addEventListener('scroll', updateText);
+window.addEventListener('resize', updateText);
+
